@@ -10,6 +10,7 @@
 <body>
   <header>
     <nav>
+      <a href="assignments.php">My assignments</a> |
       <a href="https://www.byui.edu/">BYU-I</a> |
       <a href="https://www.w3schools.com">W3Schools</a> |
       <a href="https://www.nethack.org/">NetHack</a> |
