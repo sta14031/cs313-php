@@ -31,12 +31,7 @@
     <p>
       The current time on the server is <b>
         <?php
-          $info = getdate();
-          $hour = $info['hours'];
-          $min = $info['minutes'];
-          $sec = $info['seconds'];
-          
-          echo "$hours:$minutes:$seconds";
+          echo date("h:i:s A");
        ?></b>.
     </p>
   </div>
