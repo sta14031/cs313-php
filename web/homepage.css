@@ -1,0 +1,52 @@
+body {
+    background-color: #aac;
+    color: #224;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+    background-color: #222;
+}
+
+header nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header nav a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+}
+header nav a:hover {
+    background-color: #888;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:72px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+div {
+    margin: 30px;
+    padding: 10px;
+}
+
+div#title {border: 5px solid #222;}
+
+div#title img {
+    float: right;
+    height: 320px;
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    header nav {flex-direction: column}
+}
