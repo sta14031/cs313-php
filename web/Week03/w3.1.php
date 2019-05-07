@@ -17,7 +17,13 @@
         <?php
         $majors = [
             "Computer Science",
-            "Web Design and Development"
+            "Web Design and Development",
+            "Computer Information Technology",
+            "Software Engineering",
+            "Video Game Designer",
+            "Yu-Gi-Oh Card Making",
+            "Fan Fiction Writing",
+            "The Art Of Trolling"
         ];
 
         foreach($majors as $major)
@@ -27,43 +33,23 @@
 
         ?>
 
-<!--
-        <input type="radio" name="major" value="cs" />
-        Computer Science <br />
-        <input type="radio" name="major" value="wdd" />
-        Web Design and Development<br />
-        <input type="radio" name="major" value="cit" />
-        Computer Information Technology<br />
-        <input type="radio" name="major" value="ce" />
-        Computer Engineering<br />
-        <input type="radio" name="major" value="se">
-        Software Engineering<br />
-        <input type="radio" name="major" value="vgd"> 
-        Video Game Design<br />
-        <input type="radio" name="major" value="ycm">
-        Yu-Gi-Oh Card Making<br />
-        <input type="radio" name="major" value="ffw">
-        Fan Fiction Writing<br />
-        <input type="radio" name="major" value="tat">
-        The Art Of Trolling<br />-->
-
         <br />
         Which continents have you visited?<br />
-        <input type="checkbox" name="continent[]" value="North America">
+        <input type="checkbox" name="continent[]" value="na">
         North America <br />
-        <input type="checkbox" name="continent[]" value="South America">
+        <input type="checkbox" name="continent[]" value="sa">
         South America <br />
-        <input type="checkbox" name="continent[]" value="Europe">
+        <input type="checkbox" name="continent[]" value="eu">
         Europe <br />
-        <input type="checkbox" name="continent[]" value="Asia">
+        <input type="checkbox" name="continent[]" value="as">
         Asie <br />
-        <input type="checkbox" name="continent[]" value="Australia">
+        <input type="checkbox" name="continent[]" value="au">
         Australia <br />
-        <input type="checkbox" name="continent[]" value="Africa">
+        <input type="checkbox" name="continent[]" value="af">
         Africa <br />
-        <input type="checkbox" name="continent[]" value="Antarctica">
+        <input type="checkbox" name="continent[]" value="an">
         Antarctica <br />
-        <input type="checkbox" name="continent[]" value="none">
+        <input type="checkbox" name="continent[]" value="0">
         None, I am from another planet. <br />
         
         <br />
