@@ -19,7 +19,7 @@ $comment = $_POST["comment"];
 
 echo "Name: $name<br />Email: $email<br />Major: ";
 echo strtoupper("$major");
-echo "<br />"
+echo "<br />";
 
 if (!empty($continents))
 {
