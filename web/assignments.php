@@ -4,21 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="homepage.css">
+    <link rel="stylesheet" type="text/css" href="assignments.css">
     <title>My assignments</title>
 </head>
 <body>
-<header>
-    <nav>
-      <a href="index.php">Go back home</a> |
-      <a href="https://www.byui.edu/">BYU-I</a> |
-      <a href="https://www.w3schools.com">W3Schools</a> |
-      <a href="https://www.nethack.org/">NetHack</a> |
-      <a href="https://www.minecraft.net/">Minecraft</a>
-    </nav>
-  </header>
   <div id="title">
-    <h3>Coming soon...</h3>
+    <h1>Tyler&apos;s Assignments</h1>
   </div>
-</body>
+  <div id="links">
+    <a href="Week03/w3.1.php">Week 3 Team Activity - Form Handling</a>
+  </div>
+  </body>
 </html>
