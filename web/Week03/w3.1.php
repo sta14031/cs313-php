@@ -42,7 +42,7 @@
         <input type="checkbox" name="continent[]" value="eu">
         Europe <br />
         <input type="checkbox" name="continent[]" value="as">
-        Asie <br />
+        Asia <br />
         <input type="checkbox" name="continent[]" value="au">
         Australia <br />
         <input type="checkbox" name="continent[]" value="af">

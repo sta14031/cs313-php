@@ -21,13 +21,14 @@ $continentDictionary = array(
     "na" => "North America",
     "sa" => "South America",
     "eu" => "Europe",
+    "as" => "Asia",
     "au" => "Australia",
     "af" => "Africa",
     "an" => "Antarctica",
     "0" => "None"
 );
 
-echo "Name: $name<br />Email: $email<br />Major: $major<br />";
+echo "Name: $name<br />Email: <a href='mailto:$email'>$email</a><br />Major: $major<br />";
 
 if (!empty($continents))
 {
