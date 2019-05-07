@@ -11,15 +11,26 @@
 <h1>Your data:</h1>
 <div>
 <?php
+$name = $_POST["name"];
+$email = $_POST["email"];
+$major = $_POST["major"];
+$continents = $_POST["continent"];
+$comment = $_POST["comment"];
 
-// Defining variables to use later
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $major = $_POST["major"];
-    $comment = $_POST["comment"];
+echo "Name: $name<br />Email: $email<br />Major: ";
+echo strtoupper("$major");
+echo "<br />"
 
+if (!empty($continents))
+{
+    echo "Visited continents:<br />";
+    foreach($continents as $continent)
+    {
+        echo " - $continent<br />";
+    }
+}
 
-echo("Name: $name<br />Email: $email<br />Major: $major<br />Comment: $comment<br />");
+echo "Comment: $comment<br />";
 
 ?>
 </div>
