@@ -14,6 +14,20 @@
         Email: <input type="text" size="30" name="email" /> <br />
 
         Major: <br />
+        <?php
+        $majors = [
+            "Computer Science",
+            "Web Design and Development"
+        ];
+
+        foreach($majors as $major)
+        {
+            echo "<input type='radio' name='major' value='$major' />$major <br />\n";
+        }
+
+        ?>
+
+<!--
         <input type="radio" name="major" value="cs" />
         Computer Science <br />
         <input type="radio" name="major" value="wdd" />
@@ -31,7 +45,7 @@
         <input type="radio" name="major" value="ffw">
         Fan Fiction Writing<br />
         <input type="radio" name="major" value="tat">
-        The Art Of Trolling<br />
+        The Art Of Trolling<br />-->
 
         <br />
         Which continents have you visited?<br />
