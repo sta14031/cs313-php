@@ -12,7 +12,8 @@
     <h1>Tyler&apos;s Assignments</h1>
   </div>
   <div id="links">
-    <a href="Week03/w3.1.php">Week 3 Team Activity - Form Handling</a>
+    <a href="Week03/w3.1.php">Week 3 Team Activity - Form Handling</a> <br />
+    <a href="Week03/shop.php">Week 3 Project - Shopping Cart</a> <br />
   </div>
   </body>
 </html>

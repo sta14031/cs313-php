@@ -39,7 +39,7 @@ div.item {
     text-align: center;
 }
 
-button {
+button, a {
     background-color: #ddd;
     color: black;
     padding: 5px;
@@ -47,17 +47,52 @@ button {
     border: 1px solid black;
 }
 
-button:hover {
+button:hover, a:hover {
     background-color: white;
 }
 
-/* Second page */
+a {
+    margin: 10px;
+}
+
+table {
+    margin-bottom: 50px;
+}
+
+/* Cart */
 
 tr {
     color: black;
     padding: 4px;
 }
 
-.quantity {
-    width: 3em;
+td {
+    border-top: 1px solid black;
+    padding: 10px;
+}
+
+/* Checkout */
+
+div#address {
+    border: 8px double #509;
+    text-align: left;
+    padding: 15px;
+}
+
+/* Confirm */
+
+tr#total td {
+    text-align: left;
+    padding-top: 50px;
+    font-weight: bold;
+}
+
+table.address td {
+    border: none;
+    padding: 0 0 0 10px;
+    text-align: left;
+}
+
+button {
+    margin: 10px;
 }
