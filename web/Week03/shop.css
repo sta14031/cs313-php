@@ -1,0 +1,63 @@
+body {
+    background-color: #bbb;
+    color: #444;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 10px;
+    margin: 10px;
+}
+
+h1, h2, h3 {
+    color: black;
+}
+
+hr {
+    height: 5px;
+    color: white;
+    background-color: #509;
+}
+
+div#content {
+    border: 8px double #509;
+    text-align: center;
+    padding: 15px;
+}
+
+div#items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+}
+
+div.item {
+    width: 200px;
+    height: 100px;
+    background-color: #ddd;
+    border: 4px solid #509;
+    margin: 10px;
+    
+    text-align: center;
+}
+
+button {
+    background-color: #ddd;
+    color: black;
+    padding: 5px;
+    text-decoration: none;
+    border: 1px solid black;
+}
+
+button:hover {
+    background-color: white;
+}
+
+/* Second page */
+
+tr {
+    color: black;
+    padding: 4px;
+}
+
+.quantity {
+    width: 3em;
+}
