@@ -29,23 +29,18 @@ catch (PDOException $ex)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="../assignments.css">
-    <title>Scriptures</title>
+    <title>Scripture Details</title>
 </head>
 <body>
-    <h1>Scripture Resources</h1>
-    <hr />
-    <h2>Search for a book:</h2>
-    <form action="display-books.php" method="POST">
-        Book: <input type="text" name="book" />
-        <button type="submit">Search!</button>
-    </form>
+    <h1>Your scripture:</h1>
     <hr />
     <?php
-    foreach ($db->query('SELECT * FROM Scriptures') as $row) {
-        echo "<a href='details.php?id=" . $row['id'] . "'>";
-        echo $row['book'] . " " . $row["chapter"] . ":";
-        echo $row["verse"] . "</a><br />\n";
+    $id = $_GET["id"];
+    foreach ($db->query("SELECT * FROM Scriptures WHERE id = '$id'") as $row) {
+        echo "<b>" . $row['book'] . " " . $row["chapter"] . ":";
+        echo $row["verse"] . "</b> - \"" . $row['content'] . "\"</td></tr>\n";
     }
     ?>
+    <a href="team_activity_05.php">Back to scripture resources</a>
 </body>
 </html>
