@@ -14,6 +14,7 @@
   <div id="links">
     <a href="Week03/w3.1.php">Week 3 Team Activity - Form Handling</a> <br />
     <a href="Week03/shop.php">Week 3 Project - Shopping Cart</a> <br />
+    <a href="Week05/team_activity_05.php">Week 5 Team Activity - Scriptures</a> <br />
   </div>
   </body>
 </html>
