@@ -34,11 +34,17 @@ catch (PDOException $ex)
 <body>
     <h1>Scripture Resources</h1>
     <hr />
+    <h2>Search for a book:</h2>
+    <form action="display-books.php">
+        Book: <input type="text" name="book" />
+        <button type="submit">Search!</button>
+    </form>
+    <hr />
     <table>
     <?php
     foreach ($db->query('SELECT * FROM Scriptures') as $row) {
         echo "<tr><td><b>" . $row['book'] . " " . $row["chapter"] . ":";
-        echo $row["verse"] . "</b> - </td><td>\"" . $row['content'] . "\"</td></tr>\n";
+        echo $row["verse"] . "</b></td><td>-</td><td>\"" . $row['content'] . "\"</td></tr>\n";
     }
     ?>
     </table>

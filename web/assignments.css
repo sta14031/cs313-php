@@ -13,3 +13,7 @@ div, form {
 form * {
     margin: 3px;
 }
+
+tr {
+    border: 1px solid #224;
+}
