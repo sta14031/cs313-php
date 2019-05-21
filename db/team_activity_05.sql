@@ -25,3 +25,11 @@ INSERT INTO Scriptures (book, chapter, verse, content) VALUES (
     'Mosiah', 16, 9,
     'He is the light and the life of the world; yea, a light that is endless, that can never be darkened; yea, and also a life which is endless, that there can be no more death.');
 
+INSERT INTO Scriptures (book, chapter, verse, content) VALUES (
+    'John', 3, 16,
+    'For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.');
+
+INSERT INTO Scriptures (book, chapter, verse, content) VALUES (
+    'Proverbs', 3, 5,
+    'Trust in the Lord with all thine heart; and lean not unto thine own understanding.');
+

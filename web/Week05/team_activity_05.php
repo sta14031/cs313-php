@@ -28,17 +28,19 @@ catch (PDOException $ex)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="shop.css">
+    <link rel="stylesheet" type="text/css" href="../assignments.css">
     <title>Scriptures</title>
 </head>
 <body>
     <h1>Scripture Resources</h1>
     <hr />
+    <table>
     <?php
     foreach ($db->query('SELECT * FROM Scriptures') as $row) {
-        echo "<b>" . $row['book'] . " " . $row["chapter"];
-        echo ":" . $row["verse"] . "</b> - \"" . $row['content'] . "\"<br />\n";
+        echo "<tr><td><b>" . $row['book'] . " " . $row["chapter"] . ":";
+        echo $row["verse"] . "</b> - </td><td>\"" . $row['content'] . "\"</td></tr>\n";
     }
     ?>
+    </table>
 </body>
 </html>
