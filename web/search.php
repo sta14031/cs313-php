@@ -36,5 +36,5 @@ if (empty($results)) {
     }
     echo "</ul>";
 }
-`
+
 ?>
