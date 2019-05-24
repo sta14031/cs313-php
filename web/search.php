@@ -25,7 +25,7 @@ $table = $_GET["table"];
 $column = $_GET["column"];
 $query = $_GET["query"];
 foreach ($db->query("SELECT * FROM $table WHERE $column = '$query'") as $row) {
-    echo "<p>Found " . $row['query'] . "</p>";
+    echo "<p>Found " . $row[$column] . "</p>";
 }
 
 ?>
