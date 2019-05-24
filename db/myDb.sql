@@ -1,19 +1,31 @@
 CREATE TABLE Users
 ( 
-    UserId INT PRIMARY KEY,
+    UserId SERIAL PRIMARY KEY,
     UserName VARCHAR(128),
     HashedPassword VARCHAR(128),
     Salt VARCHAR(128)
 );
 
+CREATE TABLE RecipeTypes
+(
+    TypeId SERIAL PRIMARY KEY,
+    TypeName VARCHAR(128)
+);
+
+CREATE TABLE SkillLevel
+(
+    LevelId SERIAL PRIMARY KEY,
+    SkillName VARCHAR(128)
+);
+
 CREATE TABLE Recipes
 (
-    RecipeId INT PRIMARY KEY,
-    Creator INT,
+    RecipeId SERIAL PRIMARY KEY,
+    Creator INTEGER,
     RecipeName TEXT,
-    RecipeType INT,
+    RecipeType INTEGER,
     Methods TEXT,
-    Skill INT,
+    Skill INTEGER,
     PrepTime INT,
     Date_Created DATE,
     Last_Updated DATE,
@@ -25,38 +37,24 @@ CREATE TABLE Recipes
 
 CREATE TABLE Ingredients
 (
-    IngredientId INT PRIMARY KEY,
-    IngredientName VARCHAR(128),
-    Measurement INT,
-
-    FOREIGN KEY (Measurement) REFERENCES MeasureTypes(MeasureId)
+    IngredientId SERIAL PRIMARY KEY,
+    IngredientName VARCHAR(128)
 );
 
 CREATE TABLE RecipeJoin
 (
-    JoinId INT PRIMARY KEY,
-    RecipeId INT,
-    IngredientId INT,
+    JoinId SERIAL PRIMARY KEY,
+    RecipeId INTEGER,
+    IngredientId INTEGER,
     Count INT,
 
     FOREIGN KEY (RecipeId) REFERENCES Recipes(RecipeId),
     FOREIGN KEY (IngredientId) REFERENCES Ingredients(IngredientId)
 );
 
-CREATE TABLE RecipeTypes
-(
-    TypeId INT PRIMARY KEY,
-    TypeName VARCHAR(128)
-);
-
-CREATE TABLE SkillLevel
-(
-    LevelId INT PRIMARY KEY,
-    SkillName VARCHAR(128)
-);
-
-CREATE TABLE MeasureTypes
-(
-    MeasureId INT PRIMARY KEY,
-    MeasureName VARCHAR(128)
-);
+-- DROP TABLE RecipeJoin;
+-- DROP TABLE Ingredients;
+-- DROP TABLE Recipes;
+-- DROP TABLE SkillLevel;
+-- DROP TABLE RecipeTypes;
+-- DROP TABLE Users;

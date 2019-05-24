@@ -36,11 +36,15 @@ catch (PDOException $ex)
     <hr />
     <?php
     $id = $_GET["id"];
+    // This should not be a for loop since there will only ever be
+    // one scripture with the given ID. However I do not know
+    // yet how to do it any other way.
     foreach ($db->query("SELECT * FROM Scriptures WHERE id = '$id'") as $row) {
         echo "<b>" . $row['book'] . " " . $row["chapter"] . ":";
         echo $row["verse"] . "</b> - \"" . $row['content'] . "\"</td></tr>\n";
     }
     ?>
+    <br />
     <a href="team_activity_05.php">Back to scripture resources</a>
 </body>
 </html>
