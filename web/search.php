@@ -21,16 +21,19 @@ catch (PDOException $ex)
     die();
 }
 
-echo "<ul>\n";
 $table = $_GET["table"];
 $column = $_GET["column"];
 $query = strtolower($_GET["query"]);
 
+// Sanitize query
+$query = preg_replace("/[^a-zA-Z\ ]/", "", $query);
+
 $results = $db->query("SELECT * FROM $table WHERE $column LIKE '%$query%'");
 
-if (empty($results)) {
-    echo "Nothing found matching that search! Please try again.";
+if (count($results) == 0) {
+    echo "<p>Nothing found matching that search! Please try again.</p>";
 } else {
+    echo "<ul>\n";
     foreach ($results as $row) {
         echo "<li>" . $row[$column] . "</li>\n";
     }
