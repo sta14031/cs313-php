@@ -21,11 +21,20 @@ catch (PDOException $ex)
     die();
 }
 
+echo "<ul>\n";
 $table = $_GET["table"];
 $column = $_GET["column"];
-$query = $_GET["query"];
-foreach ($db->query("SELECT * FROM $table WHERE $column = '$query'") as $row) {
-    echo "<p>Found " . $row[$column] . "</p>";
-}
+$query = strtolower($_GET["query"]);
 
+$results = $db->query("SELECT * FROM $table WHERE $column LIKE '%$query%'");
+
+if (empty($results)) {
+    echo "Nothing found matching that search! Please try again.";
+} else {
+    foreach ($results as $row) {
+        echo "<li>" . $row[$column] . "</li>\n";
+    }
+    echo "</ul>";
+}
+`
 ?>
