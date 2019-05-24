@@ -24,7 +24,7 @@ catch (PDOException $ex)
 $table = $_GET["table"];
 $column = $_GET["column"];
 $query = $_GET["query"];
-foreach ($db->query("SELECT * FROM $column WHERE $column = $query") as $row) {
+foreach ($db->query("SELECT * FROM $column WHERE $column = '$query'") as $row) {
     echo "<p>Found " . $row['query'] . "</p>";
 }
 
