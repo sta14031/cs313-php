@@ -26,16 +26,23 @@ $column = $_GET["column"];
 $query = strtolower($_GET["query"]);
 
 // Sanitize query
-$query = preg_replace("/[^a-zA-Z\ ]/", "", $query);
+$query = preg_replace("/[^a-zA-Z0-9\ ]/", "", $query);
 
-$results = $db->query("SELECT * FROM $table WHERE $column LIKE '%$query%'");
+$results = $db->query("SELECT * FROM $table WHERE $column ILIKE '%$query%'");
 
-if (count($results) == 0) {
+if ($results->rowCount() == 0) {
     echo "<p>Nothing found matching that search! Please try again.</p>";
 } else {
     echo "<ul>\n";
-    foreach ($results as $row) {
-        echo "<li>" . $row[$column] . "</li>\n";
+
+    if ($table == "recipes") {
+        echo "<li><a href='view_recipe.php?recipe=" . $row["RecipeId"];
+        echo ">" . $row[$column] . "</a></li>";
+
+    } else {
+        foreach ($results as $row) {
+            echo "<li>" . $row[$column] . "</li>\n";
+        }
     }
     echo "</ul>";
 }
