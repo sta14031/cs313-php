@@ -37,7 +37,7 @@ if ($results->rowCount() == 0) {
 
     if ($table == "recipes") {
         foreach ($results as $row) {
-            echo "<li><a href='view_recipe.php?recipe=" . strval($row["RecipeId"]);
+            echo "<li><a href='view_recipe.php?recipe=" . strval($row["recipeid"]);
             echo "'>" . $row[$column] . "</a></li>\n";
         }
 
