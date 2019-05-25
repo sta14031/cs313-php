@@ -130,3 +130,23 @@ CREATE TABLE RecipeJoin
         NOW(),
         NOW()
     );
+
+    INSERT INTO Recipes (
+        Creator,
+        RecipeName, 
+        RecipeType,
+        Methods,
+        Skill,
+        PrepTime,
+        Date_Created,
+        Last_Updated
+    ) VALUES (
+        1,
+        'Bread',
+        (SELECT TypeId FROM RecipeTypes WHERE TypeName = 'Lunch'),
+        'Combine water and yeast, let proof. Add salt and flour and knead for 5-10 minutes. Let rise for 1 hour. Punch down and place in bread pans. Let rise for 30 minutes more and then bake at 350 F for 20-25 minutes.',
+        (SELECT LevelId FROM SkillLevel WHERE SkillName = 'Intermediate'),
+        180,
+        NOW(),
+        NOW()
+    );
