@@ -26,7 +26,7 @@ catch (PDOException $ex)
 
 // This will fetch only the one row (since id is a primary key, there should only be one row)
 $stmt = $db->prepare("SELECT * FROM Recipes WHERE RecipeId = :id");
-$stmt->bindValue(':id', intval($recipeID), PDO::PARAM_INT);
+$stmt->bindValue(':id', $recipeID, PDO::PARAM_INT);
 $stmt->execute();
 $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -57,20 +57,19 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
             <ul>
             <?php
             $id = $recipe["recipeid"];
-            /*foreach ($db->query(
+            foreach ($db->query(
                 "SELECT IngredientName FROM Ingredients WHERE IngredientId =
                     (SELECT RecipeJoin.IngredientId FROM RecipeJoin LEFT JOIN
                     Recipes ON Recipes.RecipeId = RecipeJoin.RecipeId
-                    WHERE Recipes.RecipeId = $id);") as $row)*/
-                {
-                    echo "<li>";
-                    // Test code
-/*                    foreach ($row as $key => $value) {
-                        echo "$key => $value";
-                    }*/
-                    echo "</li>";
+                    WHERE Recipes.RecipeId = $id)") as $row)
+            {
+                echo "<li>";
+                // Test code
+                    foreach ($row as $key => $value) {
+                    echo "$key => $value";
                 }
-            )
+                echo "</li>";
+            }
             ?>
             </ul>
         </div>
