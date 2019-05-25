@@ -30,8 +30,6 @@ $stmt->bindValue(':id', $recipeID, PDO::PARAM_INT);
 $stmt->execute();
 $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
 
-//$result = $db->fetch("SELECT * FROM Recipes WHERE RecipeId = $recipeID");
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,10 +69,13 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
                 $stmt->execute();
                 $ingredient = $stmt->fetch(PDO::FETCH_ASSOC);
                 
-                echo "<li>$ingredient</li>";
+                echo "<li>" . $ingredient["ingredientname"] . " - " . $row["measurement"] . "</li>";
             }
             ?>
-            </ul>
+            </ul> <br />
+
+            Methods: <br />
+            <?php echo $recipe["methods"];
         </div>
     </div>
 </body>
