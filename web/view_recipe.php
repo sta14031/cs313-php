@@ -24,6 +24,12 @@ catch (PDOException $ex)
     die();
 }
 
+// This will fetch only the one row (since id is a primary key, there should only be one row)
+$stmt = $dbh->prepare("SELECT * FROM Recipes WHERE RecipeId = :id");
+$stmt->bindValue(':id', $recipeID, PDO::PARAM_INT);
+$stmt->execute();
+$recipe = $stmt->fetch(PDO::FETCH_ASSOC);
+
 //$result = $db->fetch("SELECT * FROM Recipes WHERE RecipeId = $recipeID");
 
 ?>
