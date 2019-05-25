@@ -46,7 +46,7 @@ CREATE TABLE RecipeJoin
     JoinId SERIAL PRIMARY KEY,
     RecipeId INTEGER,
     IngredientId INTEGER,
-    Count INT,
+    Measurement VARCHAR(128),
 
     FOREIGN KEY (RecipeId) REFERENCES Recipes(RecipeId),
     FOREIGN KEY (IngredientId) REFERENCES Ingredients(IngredientId)
@@ -130,6 +130,24 @@ CREATE TABLE RecipeJoin
         NOW(),
         NOW()
     );
+
+    INSERT INTO RecipeJoin (RecipeId, IngredientId, Measurement) VALUES (
+        (SELECT RecipeId FROM Recipes WHERE RecipeName = 'Cacio e Pepe'),
+        (SELECT IngredientId FROM Ingredients WHERE IngredientName = 'Cheese'),
+        '1/2 cup'
+    );
+    INSERT INTO RecipeJoin (RecipeId, IngredientId, Measurement) VALUES (
+        (SELECT RecipeId FROM Recipes WHERE RecipeName = 'Cacio e Pepe'),
+        (SELECT IngredientId FROM Ingredients WHERE IngredientName = 'Pasta'),
+        '1 pound'
+    );
+
+    INSERT INTO RecipeJoin (RecipeId, IngredientId, Measurement) VALUES (
+        (SELECT RecipeId FROM Recipes WHERE RecipeName = 'Cacio e Pepe'),
+        (SELECT IngredientId FROM Ingredients WHERE IngredientName = 'Pepper'),
+        '1 tablespoon'
+    );
+--
 
     INSERT INTO Recipes (
         Creator,

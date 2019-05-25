@@ -52,10 +52,26 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
         <?php require("sidebar.php"); ?>
         
         <div id="content">
-            <h3><?php echo $recipe["RecipeName"]; ?></h3>
-            <input type="text" name="recipename" /> <br />
-            <button type="button" id="search">Search!</button>
-            <div id="results"></div>
+            <h3><?php echo $recipe["recipename"]; ?></h3>
+            Ingredients: <br />
+            <ul>
+            <?php
+            $id = $recipe["recipeid"];
+            foreach ($db->query(
+                "SELECT IngredientName FROM Ingredients WHERE IngredientId =
+                    (SELECT RecipeJoin.IngredientId FROM RecipeJoin LEFT JOIN
+                    Recipes ON Recipes.RecipeId = RecipeJoin.RecipeId
+                    WHERE Recipes.RecipeId = $id);") as $row) {
+                        echo "<li>";
+                        // Test code
+                        foreach ($row as $key => $value) {
+                            echo "$key => $value";
+                        }
+                        echo "</li>";
+                    }
+            )
+            ?>
+            </ul>
         </div>
     </div>
 </body>
