@@ -66,12 +66,12 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
                     Recipes ON Recipes.RecipeId = RecipeJoin.RecipeId
                     WHERE Recipes.RecipeId = $id") as $row)
             {
-                echo "<li>";
-                // Test code
-                    foreach ($row as $key => $value) {
-                    echo "$key => $value";
-                }
-                echo "</li>";
+                $stmt = $db->prepare("SELECT IngredientName FROM Ingredients WHERE IngredientId = :id");
+                $stmt->bindValue(':id', $row["ingredientid"], PDO::PARAM_INT);
+                $stmt->execute();
+                $ingredient = $stmt->fetch(PDO::FETCH_ASSOC);
+                
+                echo "<li>$ingredient</li>";
             }
             ?>
             </ul>
