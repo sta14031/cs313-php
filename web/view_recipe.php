@@ -24,7 +24,7 @@ catch (PDOException $ex)
     die();
 }
 
-$recipe = $db->query("SELECT * FROM Recipes WHERE RecipeId = $recipeID")[0];
+$result = $db->fetch("SELECT * FROM Recipes WHERE RecipeId = $recipeID");
 
 ?>
 <!DOCTYPE html>
