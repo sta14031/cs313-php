@@ -57,11 +57,14 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
             <ul>
             <?php
             $id = $recipe["recipeid"];
-            foreach ($db->query(
+            /*foreach ($db->query(
                 "SELECT IngredientName FROM Ingredients WHERE IngredientId =
                     (SELECT RecipeJoin.IngredientId FROM RecipeJoin LEFT JOIN
                     Recipes ON Recipes.RecipeId = RecipeJoin.RecipeId
-                    WHERE Recipes.RecipeId = $id)") as $row)
+                    WHERE Recipes.RecipeId = $id)") as $row)*/
+            foreach ($db->query("SELECT IngredientId FROM RecipeJoin LEFT JOIN
+                    Recipes ON Recipes.RecipeId = RecipeJoin.RecipeId
+                    WHERE Recipes.RecipeId = $id") as $row)
             {
                 echo "<li>";
                 // Test code
