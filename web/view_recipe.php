@@ -75,7 +75,7 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
             </ul> <br />
 
             Methods: <br />
-            <?php echo $recipe["methods"];
+            <?php echo $recipe["methods"]; ?>
         </div>
     </div>
 </body>
