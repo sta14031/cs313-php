@@ -168,3 +168,24 @@ CREATE TABLE RecipeJoin
         NOW(),
         NOW()
     );
+
+    INSERT INTO RecipeJoin (RecipeId, IngredientId, Measurement) VALUES (
+        (SELECT RecipeId FROM Recipes WHERE RecipeName = 'Bread'),
+        (SELECT IngredientId FROM Ingredients WHERE IngredientName = 'Flour'),
+        '6 cups'
+    );
+    INSERT INTO RecipeJoin (RecipeId, IngredientId, Measurement) VALUES (
+        (SELECT RecipeId FROM Recipes WHERE RecipeName = 'Bread'),
+        (SELECT IngredientId FROM Ingredients WHERE IngredientName = 'Water'),
+        '2 cups'
+    );
+    INSERT INTO RecipeJoin (RecipeId, IngredientId, Measurement) VALUES (
+        (SELECT RecipeId FROM Recipes WHERE RecipeName = 'Bread'),
+        (SELECT IngredientId FROM Ingredients WHERE IngredientName = 'Yeast'),
+        '1 tablespoon'
+    );
+    INSERT INTO RecipeJoin (RecipeId, IngredientId, Measurement) VALUES (
+        (SELECT RecipeId FROM Recipes WHERE RecipeName = 'Bread'),
+        (SELECT IngredientId FROM Ingredients WHERE IngredientName = 'Salt'),
+        '1 tablespoon'
+    );

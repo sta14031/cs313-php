@@ -38,10 +38,10 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="recipe.css" />
-    <title></title>
+    <title><?php echo $recipe["recipename"]; ?> | Recipe Book</title>
 </head>
 <body>
-    <h1>Recipes</h1>
+    <h1><?php echo $recipe["recipename"]; ?></h1>
     <hr />
 
     <?php require("navbar.php"); ?>
@@ -50,7 +50,6 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
         <?php require("sidebar.php"); ?>
         
         <div id="content" class="recipe_container">
-            <h3><?php echo $recipe["recipename"]; ?></h3>
             <div id="recipe_details">
                 Ingredients: <br />
                 <ul>
@@ -79,7 +78,23 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
                 <?php echo $recipe["methods"]; ?>
             </div>
             <div id="recipe_info">
-                
+            <?php
+            $stmt = $db->prepare("SELECT SkillName FROM SkillLevel WHERE LevelId = :id");
+            $stmt->bindValue(':id', $row["skill"], PDO::PARAM_INT);
+            $stmt->execute();
+            $skill = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $stmt = $db->prepare("SELECT UserName FROM Users WHERE UserId = :id");
+            $stmt->bindValue(':id', $row["creator"], PDO::PARAM_INT);
+            $stmt->execute();
+            $creator = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            echo "Preparation time: " . $recipe["preptime"] . " minutes<br />\n";
+            echo "Skill level: $skill<br />\n<span class='info'>";
+            echo "Contributed by: $creator<br />\nLast updated: ";
+            echo $recipe["last_updated"] . "</span>";
+
+            ?>
             </div>
         </div>
     </div>

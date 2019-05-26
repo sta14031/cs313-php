@@ -39,8 +39,13 @@ div.recipe_container {
 }
 
 div.recipe_container div#recipe_info {
-    width: 200px;
+    width: 300px;
     margin-left: 20px;
+}
+
+span.info {
+    font-size: 14px;
+    color: #5b4040;
 }
 
 a {
