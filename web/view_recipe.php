@@ -49,33 +49,38 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
     <div id="container">
         <?php require("sidebar.php"); ?>
         
-        <div id="content">
+        <div id="content" class="recipe_container">
             <h3><?php echo $recipe["recipename"]; ?></h3>
-            Ingredients: <br />
-            <ul>
-            <?php
-            $id = $recipe["recipeid"];
-            /*foreach ($db->query(
-                "SELECT IngredientName FROM Ingredients WHERE IngredientId =
-                    (SELECT RecipeJoin.IngredientId FROM RecipeJoin LEFT JOIN
-                    Recipes ON Recipes.RecipeId = RecipeJoin.RecipeId
-                    WHERE Recipes.RecipeId = $id)") as $row)*/
-            foreach ($db->query("SELECT IngredientId FROM RecipeJoin LEFT JOIN
-                    Recipes ON Recipes.RecipeId = RecipeJoin.RecipeId
-                    WHERE Recipes.RecipeId = $id") as $row)
-            {
-                $stmt = $db->prepare("SELECT IngredientName FROM Ingredients WHERE IngredientId = :id");
-                $stmt->bindValue(':id', $row["ingredientid"], PDO::PARAM_INT);
-                $stmt->execute();
-                $ingredient = $stmt->fetch(PDO::FETCH_ASSOC);
-                
-                echo "<li>" . $ingredient["ingredientname"] . " - " . $row["measurement"] . "</li>";
-            }
-            ?>
-            </ul> <br />
+            <div id="recipe_details">
+                Ingredients: <br />
+                <ul>
+                <?php
+                $id = $recipe["recipeid"];
+                /*foreach ($db->query(
+                    "SELECT IngredientName FROM Ingredients WHERE IngredientId =
+                        (SELECT RecipeJoin.IngredientId FROM RecipeJoin LEFT JOIN
+                        Recipes ON Recipes.RecipeId = RecipeJoin.RecipeId
+                        WHERE Recipes.RecipeId = $id)") as $row)*/
+                foreach ($db->query("SELECT IngredientId, Measurement FROM RecipeJoin LEFT JOIN
+                        Recipes ON Recipes.RecipeId = RecipeJoin.RecipeId
+                        WHERE Recipes.RecipeId = $id") as $row)
+                {
+                    $stmt = $db->prepare("SELECT IngredientName FROM Ingredients WHERE IngredientId = :id");
+                    $stmt->bindValue(':id', $row["ingredientid"], PDO::PARAM_INT);
+                    $stmt->execute();
+                    $ingredient = $stmt->fetch(PDO::FETCH_ASSOC);
+                    
+                    echo "<li>" . $ingredient["ingredientname"] . " - " . $row["measurement"] . "</li>";
+                }
+                ?>
+                </ul> <br />
 
-            Methods: <br />
-            <?php echo $recipe["methods"]; ?>
+                Methods: <br />
+                <?php echo $recipe["methods"]; ?>
+            </div>
+            <div id="recipe_info">
+                
+            </div>
         </div>
     </div>
 </body>

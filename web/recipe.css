@@ -33,6 +33,16 @@ div#content {
     width: 100vw;
 }
 
+div.recipe_container {
+    border: none;
+    display: flex;
+}
+
+div.recipe_container div#recipe_info {
+    width: 200px;
+    margin-left: 20px;
+}
+
 a {
     text-decoration: none;
     color: #681f02;
