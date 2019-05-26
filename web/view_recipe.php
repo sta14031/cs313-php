@@ -80,12 +80,12 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
             <div id="recipe_info">
             <?php
             $stmt = $db->prepare("SELECT SkillName FROM SkillLevel WHERE LevelId = :id");
-            $stmt->bindValue(':id', $row["skill"], PDO::PARAM_INT);
+            $stmt->bindValue(':id', $recipe["skill"], PDO::PARAM_INT);
             $stmt->execute();
             $skill = $stmt->fetch(PDO::FETCH_ASSOC);
 
             $stmt = $db->prepare("SELECT UserName FROM Users WHERE UserId = :id");
-            $stmt->bindValue(':id', $row["creator"], PDO::PARAM_INT);
+            $stmt->bindValue(':id', $recipe["creator"], PDO::PARAM_INT);
             $stmt->execute();
             $creator = $stmt->fetch(PDO::FETCH_ASSOC);
 
