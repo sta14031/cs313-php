@@ -90,8 +90,8 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
             $creator = $stmt->fetch(PDO::FETCH_ASSOC);
 
             echo "Preparation time: " . $recipe["preptime"] . " minutes<br />\n";
-            echo "Skill level: " . $skill["skillname"] . <br />\n<span class='info'>";
-            echo "Contributed by: " . $creator["username"] . <br />\nLast updated: ";
+            echo "Skill level: " . $skill["skillname"] . "<br />\n<span class='info'>";
+            echo "Contributed by: " . $creator["username"] . "<br />\nLast updated: ";
             echo $recipe["last_updated"] . "</span>";
 
             ?>
