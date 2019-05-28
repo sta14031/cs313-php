@@ -43,7 +43,7 @@ catch (PDOException $ex)
         <?php
         foreach ($db->query('SELECT * FROM Topics') as $row) {
             echo $row["topicname"] . " - <input type='checkbox' name=";
-            echo $row["topicname"] . " /><br />";
+            echo "topic[] value=" . $row["topicname"] . "/><br />";
         }
         ?>
         <button type="submit">Insert!</button>
