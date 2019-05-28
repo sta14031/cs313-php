@@ -29,16 +29,12 @@ catch (PDOException $ex)
 }
 
 $stmt = $db->prepare(
-    "INSERT INTO Scriptures (book, chapter, verse, content) VALUES "
-    . "($book, $chapter, $verse, $content);");
+    "INSERT INTO Scriptures (book, chapter, verse, content) VALUES ($book, $chapter, $verse, $content);");
 $stmt->execute();
 
 foreach ($topics as $topic) {
     $stmt = $db->prepare(
-        "INSERT INTO ScriptureTopic (scripture, topics) VALUES "
-        . "(SELECT id FROM Sciptures WHERE "
-        . "book=$book AND chapter=$chapter AND verse=$verse"
-        . "), " . $topic["id"]);
+        "INSERT INTO ScriptureTopic (scripture, topics) VALUES (SELECT id FROM Sciptures WHERE book=$book AND chapter=$chapter AND verse=$verse, " . $topic["id"]);
     $stmt->execute();
 }
 
