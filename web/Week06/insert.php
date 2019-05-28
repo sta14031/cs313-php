@@ -28,6 +28,8 @@ catch (PDOException $ex)
     die();
 }
 
+echo $book;
+
 $stmt = $db->prepare(
     "INSERT INTO Scriptures (book, chapter, verse, content) VALUES ($book, $chapter, $verse, $content);");
 $stmt->execute();

@@ -33,3 +33,30 @@ INSERT INTO Scriptures (book, chapter, verse, content) VALUES (
     'Proverbs', 3, 5,
     'Trust in the Lord with all thine heart; and lean not unto thine own understanding.');
 
+Create Table Topics
+(
+    id SERIAL,
+    topicName TEXT,
+    PRIMARY KEY (id)
+);
+
+INSERT into Topics(topicName)Values (
+    'Faith'
+);
+INSERT into Topics(topicName)Values (
+    'Sacrifice'
+);
+INSERT into Topics(topicName)Values (
+    'Charity'
+);
+
+Create Table ScriptureTopic (
+    id serial,
+    scripture int,
+    topics int,
+
+    FOREIGN KEY (scripture) REFERENCES Scriptures(id),
+    FOREIGN KEY (topics) REFERENCES Topics(id),
+    PRIMARY KEY (id)
+     
+);
