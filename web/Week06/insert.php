@@ -31,7 +31,7 @@ catch (PDOException $ex)
 echo $book;
 
 $stmt = $db->prepare(
-    "INSERT INTO Scriptures (book, chapter, verse, content) VALUES (hib, 2, 5, Hello);");
+    "INSERT INTO Scriptures (book, chapter, verse, content) VALUES ('hib', 2, 5, 'Hello');");
 $stmt->execute();
 
 foreach ($topics as $topic) {
