@@ -35,7 +35,7 @@ catch (PDOException $ex)
     <h1>Insert Scripture</h1>
     <hr />
     <h2>Insert:</h2>
-    <form action="display-books.php" method="POST">
+    <form action="insert.php" method="POST">
         Book: <input type="text" name="book" /> <br />
         Chapter: <input type="text" name="chapter" /> <br />
         Verse: <input type="text" name="verse" /> <br />
