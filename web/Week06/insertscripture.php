@@ -28,17 +28,18 @@ catch (PDOException $ex)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../assignments.css">
+    <title>Insert a scripture</title>
 </head>
 <body>
     <h1>Insert Scripture</h1>
     <hr />
     <h2>Insert:</h2>
     <form action="display-books.php" method="POST">
-        Book: <input type="text" name="book" />\
-        Chapter: <input type="text" name="chapter" />
-        Verse: <input type="text" name="verse" />
-        Content: <textarea name="content" ></textarea>
+        Book: <input type="text" name="book" /> <br />
+        Chapter: <input type="text" name="chapter" /> <br />
+        Verse: <input type="text" name="verse" /> <br />
+        Content: <textarea name="content" ></textarea> <br />
         <?php
         foreach ($db->query('SELECT * FROM Topics') as $row) {
             echo $row["topicname"] . " - <input type='checkbox' name=";
