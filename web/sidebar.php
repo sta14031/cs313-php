@@ -18,4 +18,7 @@
             echo "Welcome, " . $_SESSION["username"] . "!<br /><a href='logout.php'>Log out</a>";
         }
     ?> <br />
+    <h3>User functions</h3>
+    <hr />
+    <a href="new_recipe.php">Add a new recipe</a> <br />
 </div>
