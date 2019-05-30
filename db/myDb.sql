@@ -41,7 +41,7 @@ CREATE TABLE Ingredients
     IngredientName VARCHAR(128)
 );
 
-CREATE TABLE RecipeJoin
+CREATE TABLE Recipes_Ingredients
 (
     JoinId SERIAL PRIMARY KEY,
     RecipeId INTEGER,
@@ -52,7 +52,7 @@ CREATE TABLE RecipeJoin
     FOREIGN KEY (IngredientId) REFERENCES Ingredients(IngredientId)
 );
 
--- DROP TABLE RecipeJoin;
+-- DROP TABLE Recipes_Ingredients;
 -- DROP TABLE Ingredients;
 -- DROP TABLE Recipes;
 -- DROP TABLE SkillLevel;
@@ -131,18 +131,18 @@ CREATE TABLE RecipeJoin
         NOW()
     );
 
-    INSERT INTO RecipeJoin (RecipeId, IngredientId, Measurement) VALUES (
+    INSERT INTO Recipes_Ingredients (RecipeId, IngredientId, Measurement) VALUES (
         (SELECT RecipeId FROM Recipes WHERE RecipeName = 'Cacio e Pepe'),
         (SELECT IngredientId FROM Ingredients WHERE IngredientName = 'Cheese'),
         '1/2 cup'
     );
-    INSERT INTO RecipeJoin (RecipeId, IngredientId, Measurement) VALUES (
+    INSERT INTO Recipes_Ingredients (RecipeId, IngredientId, Measurement) VALUES (
         (SELECT RecipeId FROM Recipes WHERE RecipeName = 'Cacio e Pepe'),
         (SELECT IngredientId FROM Ingredients WHERE IngredientName = 'Pasta'),
         '1 pound'
     );
 
-    INSERT INTO RecipeJoin (RecipeId, IngredientId, Measurement) VALUES (
+    INSERT INTO Recipes_Ingredients (RecipeId, IngredientId, Measurement) VALUES (
         (SELECT RecipeId FROM Recipes WHERE RecipeName = 'Cacio e Pepe'),
         (SELECT IngredientId FROM Ingredients WHERE IngredientName = 'Pepper'),
         '1 tablespoon'
@@ -169,22 +169,22 @@ CREATE TABLE RecipeJoin
         NOW()
     );
 
-    INSERT INTO RecipeJoin (RecipeId, IngredientId, Measurement) VALUES (
+    INSERT INTO Recipes_Ingredients (RecipeId, IngredientId, Measurement) VALUES (
         (SELECT RecipeId FROM Recipes WHERE RecipeName = 'Bread'),
         (SELECT IngredientId FROM Ingredients WHERE IngredientName = 'Flour'),
         '6 cups'
     );
-    INSERT INTO RecipeJoin (RecipeId, IngredientId, Measurement) VALUES (
+    INSERT INTO Recipes_Ingredients (RecipeId, IngredientId, Measurement) VALUES (
         (SELECT RecipeId FROM Recipes WHERE RecipeName = 'Bread'),
         (SELECT IngredientId FROM Ingredients WHERE IngredientName = 'Water'),
         '2 cups'
     );
-    INSERT INTO RecipeJoin (RecipeId, IngredientId, Measurement) VALUES (
+    INSERT INTO Recipes_Ingredients (RecipeId, IngredientId, Measurement) VALUES (
         (SELECT RecipeId FROM Recipes WHERE RecipeName = 'Bread'),
         (SELECT IngredientId FROM Ingredients WHERE IngredientName = 'Yeast'),
         '1 tablespoon'
     );
-    INSERT INTO RecipeJoin (RecipeId, IngredientId, Measurement) VALUES (
+    INSERT INTO Recipes_Ingredients (RecipeId, IngredientId, Measurement) VALUES (
         (SELECT RecipeId FROM Recipes WHERE RecipeName = 'Bread'),
         (SELECT IngredientId FROM Ingredients WHERE IngredientName = 'Salt'),
         '1 tablespoon'
