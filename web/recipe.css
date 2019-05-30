@@ -57,6 +57,10 @@ a:hover {
     color: red;
 }
 
+table tr td {
+    text-align: right;
+}
+
 /* Sidebar / navbar */
 
 div#navbar {

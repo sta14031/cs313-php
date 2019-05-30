@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="recipe.css" />
+    <title>New Recipe</title>
+</head>
+<body>
+    <h1>Add a new recipe</h1>
+    <hr />
+
+    <?php require("navbar.php"); ?>
+
+    <div id="container">
+        <?php require("sidebar.php"); ?>
+        
+        <form action="create_recipe.php" method="POST">
+        <table>
+            <tr><td>Name:</td><td><input type="text" name="recipeName" /></td></tr>
+            <tr><td>Preparation time:</td><td><input type="text" name="recipeName" /></td></tr>
+            
+        </table>
+        </form>
+    </div>
+</body>
+</html>
