@@ -70,7 +70,7 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
                     $stmt->execute();
                     $ingredient = $stmt->fetch(PDO::FETCH_ASSOC);*/
                     
-                    echo "<li>" . $row["i.ingredientname"] . " - " . $row["ri.measurement"] . "</li>";
+                    echo "<li>" . $row["ingredientname"] . " - " . $row["measurement"] . "</li>";
                 }
                 ?>
                 </ul> <br />
