@@ -44,18 +44,18 @@ $stmt = $db->prepare('INSERT INTO Recipes (
     ) VALUES (
         2,
         :recipeName,
-        (SELECT TypeId FROM RecipeTypes WHERE TypeName = :typeName),
+        :typeId,
         :methods,
-        (SELECT LevelId FROM SkillLevel WHERE SkillName = :skill),
+        :skillId,
         :prepTime,
         NOW(),
         NOW()
     )');
 
 $stmt->bindValue(':recipeName', $recipeName, PDO::PARAM_STR);
-$stmt->bindValue(':typeName', $recipeType, PDO::PARAM_INT);
+$stmt->bindValue(':typeId', $recipeType, PDO::PARAM_INT);
 $stmt->bindValue(':methods', $methods, PDO::PARAM_STR);
-$stmt->bindValue(':skill', $skill, PDO::PARAM_INT);
+$stmt->bindValue(':skillId', $skill, PDO::PARAM_INT);
 $stmt->bindValue(':prepTime', $prepTime, PDO::PARAM_INT);
 $stmt->execute();
 
@@ -76,7 +76,6 @@ foreach ($ingredients as $key => $ing) {
     $stmt->bindValue(':ingredientId', $ing, PDO::PARAM_INT);
     $stmt->bindValue(':measurement', $measurements[$key], PDO::PARAM_STR);
     $stmt->execute();
-
 }
 
 header("Location: recipe_home.php");

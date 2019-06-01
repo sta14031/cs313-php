@@ -30,7 +30,7 @@ div#container div {
 }
 
 div#ingredient_select {
-    min-height: auto;
+    min-height: 0;
 }
 
 div#content {
@@ -40,6 +40,10 @@ div#content {
 div.recipe_container {
     border: none;
     display: flex;
+}
+
+div.recipe_container div#recipe_details {
+    width: 75vw;
 }
 
 div.recipe_container div#recipe_info {

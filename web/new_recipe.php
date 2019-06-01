@@ -55,7 +55,7 @@ catch (PDOException $ex)
                 str = str + "<option value='" + ing[0];
                 str = str + "'>" + ing[1] + "</option>";
             });
-            str = str + "</select> Measurement: ";
+            str = str + "</select> Amount: ";
             str = str + "<input type='text' name='measurements[]' /><br />";
         }
        $("div#ingredient_select").html(str);
@@ -79,9 +79,9 @@ catch (PDOException $ex)
         
         <form action="create_recipe.php" method="POST">
             <table>
-                <tr><td>Name:</td><td><input type="text" name="recipeName" /></td></tr>
-                <tr><td>Preparation time:</td><td><input type="number" name="prepTime" /> minutes</td></tr>
-                <tr><td>Skill level:</td><td><select name="skill">
+                <tr><td>Name:</td><td colspan=2><input type="text" name="recipeName" /></td></tr>
+                <tr><td>Preparation time:</td><td><input type="number" name="prepTime" /></td><td>minutes</td></tr>
+                <tr><td>Skill level:</td><td colspan=2><select name="skill">
                 <?php
                 foreach ($db->query("SELECT * FROM SkillLevel") as $row) {
                     echo "<option value='" . $row["levelid"];
@@ -89,7 +89,7 @@ catch (PDOException $ex)
                 }
                 ?>
                 </select></td></tr>
-                <tr><td>Type of recipe:</td><td><select name="recipeType">
+                <tr><td>Type of recipe:</td><td colspan=2><select name="recipeType">
                 <?php
                 foreach ($db->query("SELECT * FROM RecipeTypes") as $row) {
                     echo "<option value='" . $row["typeid"];
@@ -104,7 +104,7 @@ catch (PDOException $ex)
             
         </div>
         
-        Instructions:<br /><textarea name="methods" rows="30" cols="80"></textarea> <br />
+        Instructions:<br /><textarea name="methods" rows="15" cols="80"></textarea> <br />
         <button type="submit">Create new recipe!</button>
         </form>
     </div>
