@@ -103,7 +103,8 @@ catch (PDOException $ex)
             
         </div>
         
-        Instructions:<br /><textarea name="methods" rows="100" cols="80"></textarea>
+        Instructions:<br /><textarea name="methods" rows="30" cols="80"></textarea> <br />
+        <button type="submit">Create new recipe!</button>
         </form>
     </div>
 </body>
