@@ -52,13 +52,6 @@ CREATE TABLE Recipes_Ingredients
     FOREIGN KEY (IngredientId) REFERENCES Ingredients(IngredientId)
 );
 
--- DROP TABLE Recipes_Ingredients;
--- DROP TABLE Ingredients;
--- DROP TABLE Recipes;
--- DROP TABLE SkillLevel;
--- DROP TABLE RecipeTypes;
--- DROP TABLE Users;
-
 --
     INSERT INTO Ingredients (IngredientName) VALUES ('Carrots');
     INSERT INTO Ingredients (IngredientName) VALUES ('Soy Sauce');
@@ -96,6 +89,13 @@ CREATE TABLE Recipes_Ingredients
     INSERT INTO Ingredients (IngredientName) VALUES ('Water');
     INSERT INTO Ingredients (IngredientName) VALUES ('Milk');
     INSERT INTO Ingredients (IngredientName) VALUES ('Yeast');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Bacon');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Cocoa Powder');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Celery');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Paprika');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Ground Mustard');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Cumin');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Jelly');
 
 --
     INSERT INTO Users (UserName) VALUES ('Tyler');
