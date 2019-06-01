@@ -13,7 +13,6 @@
 <body>
     <h1>Log in</h1>
     <hr />
-    <?php require("navbar.php"); ?>
     <div id="container">
         <div id="content">
             Name: <input type="text" name="username" />

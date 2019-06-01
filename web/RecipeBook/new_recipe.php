@@ -72,8 +72,6 @@ catch (PDOException $ex)
     <h1>Add a new recipe</h1>
     <hr />
 
-    <?php require("navbar.php"); ?>
-
     <div id="container">
         <?php require("sidebar.php"); ?>
         

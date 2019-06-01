@@ -42,8 +42,6 @@ catch (PDOException $ex)
     <h1>Modify a recipe</h1>
     <hr />
 
-    <?php require("navbar.php"); ?>
-
     <div id="container">
         <ul>
             <?php require("sidebar.php"); ?>

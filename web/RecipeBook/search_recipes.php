@@ -32,8 +32,6 @@
     <h1>Search Recipes</h1>
     <hr />
 
-    <?php require("navbar.php"); ?>
-
     <div id="container">
         <?php require("sidebar.php"); ?>
         

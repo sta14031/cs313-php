@@ -44,8 +44,6 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
     <h1><?php echo $recipe["recipename"]; ?></h1>
     <hr />
 
-    <?php require("navbar.php"); ?>
-
     <div id="container">
         <?php require("sidebar.php"); ?>
         

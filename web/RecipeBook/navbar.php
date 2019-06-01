@@ -1,6 +1,5 @@
 <?php
 # This file provides a navbar to all pages
-die();
 ?>
 <div id="navbar">
     <a href="recipe_home.php">Home</a>

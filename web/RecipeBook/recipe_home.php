@@ -14,8 +14,6 @@
     <h1>Recipe Browser</h1>
     <hr />
 
-    <?php require("navbar.php"); ?>
-
     <div id="container">
         <?php require("sidebar.php"); ?>
         
