@@ -32,7 +32,7 @@ catch (PDOException $ex)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="recipe.css" />
-    <script src="../jquery-3.3.1.min.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
     <title>New Recipe</title>
 </head>
 <body>
@@ -51,10 +51,10 @@ catch (PDOException $ex)
         var str = "";
         for (i = 0; i < num; i++) {
             str = str + "<select name='ingredients[]'>";
-            for (ing in ingredients) {
+            ingredients.forEach(function(ing, i) {
                 str = str + "<option value='" + ing[0];
                 str = str + "'>" + ing[1] + "</option>";
-            }
+            });
             str = str + "</select>";
         }
        $("div#ingredient_select").html(str);
@@ -63,9 +63,9 @@ catch (PDOException $ex)
     // After the document is loaded, populate the first input
     $(document).ready(function(){
         populate(1);
-        $("input#numIngredients").change(function()
+        $("input#numIngredients").change(function(){
             populate($("input#numIngredients").val());
-        );
+        });
     });
     </script>
     <h1>Add a new recipe</h1>

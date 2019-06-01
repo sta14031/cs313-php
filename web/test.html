@@ -5,9 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="recipe.css" />
+    <script src="jquery-3.3.1.min.js"></script>
     <title>New Recipe</title>
 </head>
 <body>
+<script type="text/javascript">
+    var ingredients = [['100', 'Apples'], ['82', 'Bananas'], ['86', 'Barbecue Sauce'], ['71', 'Carrots'], ['77', 'Cheese'], ['75', 'Chicken'], ['87', 'Corn'], ['81', 'Cucumber'], ['92', 'Eggplants'], ['93', 'Eggs'], ['102', 'Flour'], ['84', 'Garlic'], ['90', 'Ground Beef'], ['98', 'Lemons'], ['99', 'Limes'], ['101', 'Mangoes'], ['105', 'Milk'], ['74', 'Mint'], ['96', 'Olive Oil'], ['83', 'Onions'], ['97', 'Oranges'], ['89', 'Parsley'], ['88', 'Pasta'], ['79', 'Pepper'], ['80', 'Potatoes'], ['78', 'Salt'], ['72', 'Soy Sauce'], ['91', 'Steak'], ['73', 'Strawberries'], ['103', 'Sugar'], ['85', 'Thyme'], ['76', 'Tomatoes'], ['95', 'Vegetable oil'], ['104', 'Water'], ['94', 'Watermelon'], ['106', 'Yeast'], ];
+
+    function populate(num) {
+        var str = "";
+        for (i = 0; i < num; i++) {
+            str = str + "<select name='ingredients[]'>";
+            ingredients.forEach(function(ing, i) {
+                str = str + "<option value='" + ing[0];
+                str = str + "'>" + ing[1] + "</option>";
+            });
+            str = str + "</select>";
+        }
+        $("div#ingredient_select").html(str);
+    }
+
+    // After the document is loaded, populate the first input
+    $(document).ready(function(){
+        populate(1);
+        $("input#numIngredients").change(function(){
+            populate($("input#numIngredients").val());
+        });
+    });
+    </script>
     <h1>Add a new recipe</h1>
     <hr />
 
@@ -22,12 +47,18 @@
             <tr><td>Preparation time:</td><td><input type="text" name="prepTime" /></td></tr>
             <tr><td>Skill level:</td><td>
                 <select name="skill">
-                <?php
-                foreach ()
-                ?>
+
                 </select>
             </td></tr>
         </table>
+
+        
+        Number of ingredients: <input id="numIngredients" type="number" min="1" value="1" /> <br />
+        <div id="ingredient_select">
+            
+        </div>
+        
+        Instructions:<br /><textarea name="methods"></textarea>
         </form>
     </div>
 </body>

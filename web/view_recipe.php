@@ -55,21 +55,11 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
                 <ul>
                 <?php
                 $id = $recipe["recipeid"];
-                /*foreach ($db->query(
-                    "SELECT IngredientName FROM Ingredients WHERE IngredientId =
-                        (SELECT Recipes_Ingredients.IngredientId FROM Recipes_Ingredients LEFT JOIN
-                        Recipes ON Recipes.RecipeId = Recipes_Ingredients.RecipeId
-                        WHERE Recipes.RecipeId = $id)") as $row)*/
                 foreach ($db->query("SELECT ri.IngredientId, ri.Measurement, i.IngredientName FROM Recipes_Ingredients ri LEFT JOIN
                         Recipes r ON ri.RecipeId = r.RecipeId LEFT JOIN
                         Ingredients i ON ri.IngredientId = i.IngredientId
                         WHERE ri.RecipeId = $id") as $row)
-                {
-                    /*$stmt = $db->prepare("SELECT IngredientName FROM Ingredients WHERE IngredientId = :id");
-                    $stmt->bindValue(':id', $row["ingredientid"], PDO::PARAM_INT);
-                    $stmt->execute();
-                    $ingredient = $stmt->fetch(PDO::FETCH_ASSOC);*/
-                    
+                {                    
                     echo "<li>" . $row["ingredientname"] . " - " . $row["measurement"] . "</li>";
                 }
                 ?>
