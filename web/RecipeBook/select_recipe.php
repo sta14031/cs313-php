@@ -43,21 +43,21 @@ catch (PDOException $ex)
     <hr />
 
     <div id="container">
-        <ul>
-            <?php require("sidebar.php"); ?>
+        <?php require("sidebar.php"); ?>
 
-            <!-- The user will select a recipe to modify -->
-            <?php
-            foreach($db->query('SELECT * FROM Recipes WHERE Creator = 2') as $row) { // The TestAdmin account; will change later
-                echo "<li>
-                    <form action='modify_recipe.php' method='POST'>
-                        <input type='hidden' name='recipeId' value='" . $row['recipeid'] . "' />
-                        <button type='submit' class='recipeSubmit'>" . $row['recipename'] . "</button>
-                    </form>
-                    </li>";
-            }
-            ?>
-        </ul>
+        <!-- The user will select a recipe to modify -->
+        <div><ul>
+        <?php
+        foreach($db->query('SELECT * FROM Recipes WHERE Creator = 2') as $row) { // The TestAdmin account; will change later
+            echo "<li>
+                <form action='modify_recipe.php' method='POST'>
+                    <input type='hidden' name='recipeId' value='" . $row['recipeid'] . "' />
+                    <button type='submit' class='recipeSubmit'>" . $row['recipename'] . "</button>
+                </form>
+                </li>";
+        }
+        ?>
+        </ul></div>
     </div>
 </body>
 </html>

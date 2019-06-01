@@ -74,7 +74,7 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
         });
     });
     </script>
-    <h1>Update the recipe</h1>
+    <h1>Modify a recipe</h1>
     <hr />
 
     <div id="container">
@@ -130,8 +130,10 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
             
         </div>
         
-        Instructions:<br /><textarea name="methods" rows="15" cols="80"></textarea> <br />
-        <button type="submit">Create new recipe!</button>
+        Instructions:<br /><textarea name="methods" rows="15" cols="80"><?php
+            echo $recipe["methods"];
+        ?></textarea> <br />
+        <button type="submit">Apply changes</button>
         </form>
     </div>
 </body>
