@@ -21,5 +21,5 @@
     <h3>User functions</h3>
     <hr />
     <a href="new_recipe.php">Add a new recipe</a> <br />
-    <a href="modify_recipe.php">Modify a recipe</a> <br />
+    <a href="select_recipe.php">Modify a recipe</a> <br />
 </div>
