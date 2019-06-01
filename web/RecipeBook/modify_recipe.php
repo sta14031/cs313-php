@@ -80,7 +80,8 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
     <div id="container">
         <?php require("sidebar.php"); ?>
         
-        <form action="create_recipe.php" method="POST">
+        <form action="update_recipe.php" method="POST">
+            <input type="hidden" name="recipeId" value="<?php echo $recipeId; ?>" />
             <table>
                 <tr><td>Name:</td><td colspan=2><input type="text" name="recipeName" value='<?php
                     echo $recipe["recipename"];
