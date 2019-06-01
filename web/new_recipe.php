@@ -55,7 +55,8 @@ catch (PDOException $ex)
                 str = str + "<option value='" + ing[0];
                 str = str + "'>" + ing[1] + "</option>";
             });
-            str = str + "</select><br />";
+            str = str + "</select> Measurement: ";
+            str = str + "<input type='text' name='measurements[]' /><br />";
         }
        $("div#ingredient_select").html(str);
     }
