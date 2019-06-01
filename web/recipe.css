@@ -29,6 +29,10 @@ div#container div {
     min-height: 100vh;
 }
 
+div#ingredient_select {
+    min-height: auto;
+}
+
 div#content {
     width: 100vw;
 }

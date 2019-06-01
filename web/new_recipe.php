@@ -55,7 +55,7 @@ catch (PDOException $ex)
                 str = str + "<option value='" + ing[0];
                 str = str + "'>" + ing[1] + "</option>";
             });
-            str = str + "</select>";
+            str = str + "</select><br />";
         }
        $("div#ingredient_select").html(str);
     }
@@ -79,7 +79,7 @@ catch (PDOException $ex)
         <form action="create_recipe.php" method="POST">
             <table>
                 <tr><td>Name:</td><td><input type="text" name="recipeName" /></td></tr>
-                <tr><td>Preparation time:</td><td><input type="text" name="prepTime" /></td></tr>
+                <tr><td>Preparation time:</td><td><input type="number" name="prepTime" /> minutes</td></tr>
                 <tr><td>Skill level:</td><td><select name="skill">
                 <?php
                 foreach ($db->query("SELECT * FROM SkillLevel") as $row) {
@@ -103,7 +103,7 @@ catch (PDOException $ex)
             
         </div>
         
-        Instructions:</td><td><textarea name="methods"></textarea>
+        Instructions:<br /><textarea name="methods" rows="100" cols="80"></textarea>
         </form>
     </div>
 </body>

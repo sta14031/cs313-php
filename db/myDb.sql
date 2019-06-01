@@ -99,6 +99,7 @@ CREATE TABLE Recipes_Ingredients
 
 --
     INSERT INTO Users (UserName) VALUES ('Tyler');
+    INSERT INTO Users (UserName) VALUES ('TestAdmin');
 --
     INSERT INTO RecipeTypes (TypeName) VALUES ('Breakfast');
     INSERT INTO RecipeTypes (TypeName) VALUES ('Lunch');
