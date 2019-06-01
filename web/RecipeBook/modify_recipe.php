@@ -51,8 +51,8 @@ catch (PDOException $ex)
             foreach($db->query('SELECT * FROM Recipes WHERE Creator = 2') as $row) { // The TestAdmin account; will change later
                 echo "<li>
                     <form action='create_recipe.php' method='POST'>
-                        <input type='hidden' name='recipeId' value='" . $row['recipeId'] . "' />
-                        <button type='submit' class='recipeSubmit'>" . $row['recipeName'] . "</button>
+                        <input type='hidden' name='recipeId' value='" . $row['recipeid'] . "' />
+                        <button type='submit' class='recipeSubmit'>" . $row['recipename'] . "</button>
                     </form>
                     </li>";
             }

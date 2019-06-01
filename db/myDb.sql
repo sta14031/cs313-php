@@ -96,6 +96,7 @@ CREATE TABLE Recipes_Ingredients
     INSERT INTO Ingredients (IngredientName) VALUES ('Ground Mustard');
     INSERT INTO Ingredients (IngredientName) VALUES ('Cumin');
     INSERT INTO Ingredients (IngredientName) VALUES ('Jelly');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Butter');
 
 --
     INSERT INTO Users (UserName) VALUES ('Tyler');
