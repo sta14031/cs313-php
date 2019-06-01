@@ -43,7 +43,7 @@ div.recipe_container {
 }
 
 div.recipe_container div#recipe_details {
-    width: 75vw;
+    min-width: 40vw;
 }
 
 div.recipe_container div#recipe_info {
@@ -67,6 +67,10 @@ a:hover {
 
 table tr td {
     text-align: right;
+}
+
+input[type=number]{
+    width: 50px;
 }
 
 /* Sidebar / navbar */

@@ -78,6 +78,6 @@ foreach ($ingredients as $key => $ing) {
     $stmt->execute();
 }
 
-header("Location: recipe_home.php");
+header("Location: view_recipe.php?recipe=" . $recipeId);
 die();
 ?>

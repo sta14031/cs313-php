@@ -43,13 +43,14 @@
         
         <form action="create_recipe.php" method="POST">
         <table>
-            <tr><td>Name:</td><td><input type="text" name="recipeName" /></td></tr>
-            <tr><td>Preparation time:</td><td><input type="text" name="prepTime" /></td></tr>
-            <tr><td>Skill level:</td><td>
-                <select name="skill">
-
-                </select>
-            </td></tr>
+            <tr><td>Name:</td><td colspan=2><input type="text" name="recipeName" /></td></tr>
+            <tr><td>Preparation time:</td><td><input type="number" size="2" name="prepTime" /></td><td>minutes</td></tr>
+            <tr><td>Skill level:</td><td colspan=2><select name="skill">
+            
+            </select></td></tr>
+            <tr><td>Type of recipe:</td><td colspan=2><select name="recipeType">
+          
+            </select></td></tr>
         </table>
 
         
