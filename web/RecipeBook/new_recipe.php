@@ -80,7 +80,7 @@ catch (PDOException $ex)
         <form action="create_recipe.php" method="POST">
             <table>
                 <tr><td>Name:</td><td colspan=2><input type="text" name="recipeName" /></td></tr>
-                <tr><td>Preparation time:</td><td><input type="number" name="prepTime" /></td><td>minutes</td></tr>
+                <tr><td>Preparation time:</td><td><input type="number" class="numInput" name="prepTime" /></td><td>minutes</td></tr>
                 <tr><td>Skill level:</td><td colspan=2><select name="skill">
                 <?php
                 foreach ($db->query("SELECT * FROM SkillLevel") as $row) {
@@ -99,7 +99,7 @@ catch (PDOException $ex)
                 </select></td></tr>
             </table> <br />
 
-        Number of ingredients: <input id="numIngredients" type="number" min="1" value="1" /> <br />
+        Number of ingredients: <input id="numIngredients" class="numInput" type="number" min="1" value="1" /> <br />
         <div id="ingredient_select">
             
         </div>
