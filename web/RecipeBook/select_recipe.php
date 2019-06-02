@@ -46,7 +46,7 @@ catch (PDOException $ex)
         <?php require("sidebar.php"); ?>
 
         <!-- The user will select a recipe to modify -->
-        <div><ul>
+        <div id="content"><ul>
         <?php
         foreach($db->query('SELECT * FROM Recipes WHERE Creator = 2') as $row) { // The TestAdmin account; will change later
             echo "<li>

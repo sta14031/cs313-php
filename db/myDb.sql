@@ -61,7 +61,7 @@ CREATE TABLE Recipes_Ingredients
     INSERT INTO Ingredients (IngredientName) VALUES ('Tomatoes');
     INSERT INTO Ingredients (IngredientName) VALUES ('Cheese');
     INSERT INTO Ingredients (IngredientName) VALUES ('Salt');
-    INSERT INTO Ingredients (IngredientName) VALUES ('Pepper');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Black Pepper');
     INSERT INTO Ingredients (IngredientName) VALUES ('Potatoes');
     INSERT INTO Ingredients (IngredientName) VALUES ('Cucumber');
     INSERT INTO Ingredients (IngredientName) VALUES ('Bananas');
@@ -97,6 +97,32 @@ CREATE TABLE Recipes_Ingredients
     INSERT INTO Ingredients (IngredientName) VALUES ('Cumin');
     INSERT INTO Ingredients (IngredientName) VALUES ('Jelly');
     INSERT INTO Ingredients (IngredientName) VALUES ('Butter');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Ginger');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Oregano');
+    INSERT INTO Ingredients (IngredientName) VALUES ('White Pepper');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Red Pepper');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Cinnamon');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Powdered Sugar');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Brown Sugar');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Vanilla');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Baking Soda');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Baking Powder');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Rosemary');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Nutmeg');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Allspice');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Cloves');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Basil');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Saffron');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Cream of Mushroom');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Cream of Chicken');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Stock');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Cream of Tartar');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Cornstarch');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Bay Leaves');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Tarragon');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Broth');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Pumpkin');
+    INSERT INTO Ingredients (IngredientName) VALUES ('Chocolate Chips');
 
 --
     INSERT INTO Users (UserName) VALUES ('Tyler');

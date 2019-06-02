@@ -2,6 +2,12 @@
 # This file provides a sidebar to all pages
 ?>
 <div id="sidebar">
+    <h3>Navigation</h3>
+    <hr />
+    <a href="recipe_home.php">Home</a> <br />
+    <a href="../assignments.php">Back to assignments page</a> <br />
+    <a href="../index.php">Back to class home page</a> <br />
+    
     <h3>Search functions</h3>
     <hr />
     <a href="search_recipes.php">Search recipes</a> <br />
