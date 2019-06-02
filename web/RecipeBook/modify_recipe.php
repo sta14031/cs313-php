@@ -146,7 +146,7 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
                 }
                 echo "</select> Amount: <input type='text' ";
                 echo "name='measurements[]' value='";
-                echo $row['measurement'] . "/><br />\n";
+                echo $row['measurement'] . "' /><br />\n";
             }
             ?>
         </div>
