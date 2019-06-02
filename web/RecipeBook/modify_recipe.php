@@ -142,7 +142,7 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
                     if (isset($row[$ing['ingredientid']])) {
                         echo " selected";
                     }
-                    echo ">" . $ing['ingredientname'] . "</option";
+                    echo ">" . $ing['ingredientname'] . "</option>";
                 }
                 echo "</select> Amount: <input type='text' ";
                 echo "name='measurements[]' /><br />";
