@@ -128,7 +128,27 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
             echo $count["count"];
         ?>" /> <br />
         <div id="ingredient_select">
-            
+            <?php
+            $ings = $db->query("SELECT * FROM Ingredients ORDER BY IngredientName");
+
+            foreach($db->query("SELECT ri.IngredientId, ri.Measurement, i.IngredientName FROM Recipes_Ingredients ri LEFT JOIN
+                        Recipes r ON ri.RecipeId = r.RecipeId LEFT JOIN
+                        Ingredients i ON ri.IngredientId = i.IngredientId
+                        WHERE ri.RecipeId = $recipeId") as $row)
+            {
+                echo "<select name='ingredients[]'>";
+                foreach($ings as $ing) {
+                    echo "<option value='" . $ing['ingredientid'] . "'";
+                    if (isset($row[$ing['ingredientid']])) {
+                        echo " selected";
+                    }
+                    echo ">" . $ing['ingredientname'] . "</option";
+                }
+                echo "</select> Amount: <input type='text' ";
+                echo "name='measurements[]' /><br />";
+
+            }
+            ?>
         </div>
         
         Instructions:<br /><textarea name="methods" rows="15" cols="80"><?php
