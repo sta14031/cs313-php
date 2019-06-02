@@ -139,14 +139,14 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
                 echo "<select name='ingredients[]'>";
                 foreach($ings as $ing) {
                     echo "<option value='" . $ing['ingredientid'] . "'";
-                    if (isset($row[$ing['ingredientid']])) {
+                    if ($row['ingredientname'] == $ing['ingredientname']) {
                         echo " selected";
                     }
                     echo ">" . $ing['ingredientname'] . "</option>";
                 }
                 echo "</select> Amount: <input type='text' ";
-                echo "name='measurements[]' /><br />";
-
+                echo "name='measurements[]' value='";
+                echo $row['measurement'] . "/><br />\n";
             }
             ?>
         </div>
