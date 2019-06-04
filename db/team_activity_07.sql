@@ -1,4 +1,4 @@
-CREATE TABLE Users (
+CREATE TABLE Activity7Users (
     UserId SERIAL,
     UserName VARCHAR(32),
     UserPassword VARCHAR(256),
