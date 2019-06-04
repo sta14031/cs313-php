@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-try
+/*try
 {
   $dbUrl = getenv('DATABASE_URL');
 
@@ -21,18 +21,21 @@ catch (PDOException $ex)
 {
   echo 'Error!: ' . $ex->getMessage();
   die();
-}
+}*/
 
-//require("db.php");
+require("db.php");
 
 $username = $_POST["username"];
 $password = $_POST["password"];
 
 $hashedpw = password_hash($password);
 
-$db->query("INSERT INTO Activity7Users (UserName, UserPassword) VALUES ($username, $hashedpw)");
+$stmt = $db->prepare("INSERT INTO Activity7Users (UserName, UserPassword) VALUES (:username, :hashedpw)");
+$stmt->bindValue(':username', $username, PDO::PARAM_STR);
+$stmt->bindValue(':hashedpw', $hashedpw, PDO::PARAM_STR);
+$stmt->execute();
 
-//$_SESSION["user"] = $db->lastInsertId();
+$_SESSION["user"] = $db->lastInsertId();
 
 header('Location: ' . "welcome.php");
 die();
