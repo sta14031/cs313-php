@@ -49,3 +49,7 @@ div#title img {
 @media only screen and (max-width: 600px) {
     header nav {flex-direction: column}
 }
+
+div.small {
+    width: 600px;
+}
