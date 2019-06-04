@@ -4,7 +4,7 @@ session_start();
 require("db.php");
 
 $username = $_POST["username"];
-$password = $_POST["userpassword"];
+$password = $_POST["password"];
 
 $hashedpw = password_hash($password);
 
