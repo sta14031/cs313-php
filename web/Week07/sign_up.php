@@ -13,11 +13,11 @@
 <body>
     <h1>Create a new user</h1>
     <div class="small">
-        <form action="" method="POST">
+        <form action="new_user.php" method="POST">
         <table>
             <tr><td>Name:</td><td><input type="text" name="username" /></td></tr>
-            <tr><td>Password:</td><td><input type="text" name="password" /></td></tr>
-            <tr><td colspan="2"><button type="submit" onclick="newUser()">Register</button></td></tr>
+            <tr><td>Password:</td><td><input type="password" name="password" /></td></tr>
+            <tr><td colspan="2"><button type="submit">Register</button></td></tr>
         </table>
         </form>
     </div>
