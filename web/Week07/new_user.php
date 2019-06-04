@@ -28,12 +28,12 @@ catch (PDOException $ex)
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-/*$hashedpw = password_hash($password);
+$hashedpw = password_hash($password);
 
 $db->query("INSERT INTO Activity7Users (UserName, UserPassword) VALUES ($username, $hashedpw)");
 
-$_SESSION["user"] = $db->lastInsertId();
-*/
+//$_SESSION["user"] = $db->lastInsertId();
+
 header('Location: ' . "welcome.php");
 die();
 
