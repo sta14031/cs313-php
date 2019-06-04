@@ -25,7 +25,7 @@ require("db.php");
     } else {
         echo "<p>Welcome to the page. You may sign in if you have an account, or sign up if you are a new user.</p>
         <br /> <a href='sign_in.php'>Sign in</a>
-        <br /> <a href='sign_up.php'>Sign up</a>"
+        <br /> <a href='sign_up.php'>Sign up</a>";
     }
     ?>
     </div>
