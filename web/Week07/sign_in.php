@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_GET['error']) {
+if (isset($_GET['error'])) {
     $GLOBALS["error"] = $_GET["error"];
 }
 
