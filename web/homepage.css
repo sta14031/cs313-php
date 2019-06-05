@@ -57,3 +57,7 @@ div.small {
 table tr {
     text-align: center;
 }
+
+.error {
+    color: red;
+}

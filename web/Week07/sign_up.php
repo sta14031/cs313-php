@@ -1,3 +1,11 @@
+<?php
+
+if (isset($_GET['error']) {
+    $GLOBALS["error"] = $_GET["error"];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +22,11 @@
     <h1>Create a new user</h1>
     <div class="small">
         <form action="new_user.php" method="POST">
+        <?php
+        if (isset($GLOBALS['error']) && $GLOBALS["error"] == "nameinuse") {
+            echo "<span class='error'>* The username is already in use.</span><br />";
+        }
+        ?>
         <table>
             <tr><td>Name:</td><td><input type="text" name="username" /></td></tr>
             <tr><td>Password:</td><td><input type="password" name="password" /></td></tr>
