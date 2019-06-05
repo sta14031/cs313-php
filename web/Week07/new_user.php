@@ -6,7 +6,7 @@ require("db.php");
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-$hashedpw = password_hash($password);
+$hashedpw = password_hash($password, PASSWORD_DEFAULT);
 
 // Does this username already exist in the page?
 $stmt = $db->prepare("SELECT * FROM Activity7Users WHERE UserName ILIKE '" . $username . "'");
