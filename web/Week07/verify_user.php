@@ -14,7 +14,7 @@ foreach ($db->query("SELECT * FROM Activity7Users WHERE UserName = '$username'")
         header("Location: welcome.php");
         die();
     } else {
-        header("Location: sign_up.php?error=nameinuse");
+        header("Location: sign_in.php?error=badpw");
         die();
     }
 }

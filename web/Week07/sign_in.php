@@ -26,7 +26,7 @@ if (isset($_GET['error'])) {
         ?>
         <table>
             <tr><td>Name:</td><td><input type="text" name="username" /></td></tr>
-            <tr><td>Password:</td><td><input type="text" name="password" /></td></tr>
+            <tr><td>Password:</td><td><input type="password" name="password" /></td></tr>
             <tr><td colspan="2"><button type="submit">Log in</button></td></tr>
         </table>
         </form>

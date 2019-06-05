@@ -14,7 +14,7 @@ $stmt->execute();
 
 if ($stmt->rowCount() > 0) {
 
-    header("Location: sign_in.php?error=badpw");
+    header("Location: sign_up.php?error=nameinuse");
     die();
 }
 
