@@ -64,7 +64,7 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
                 </ul> <br />
 
                 Preparation: <br />
-                <pre><?php echo $recipe["methods"]; ?></pre>
+                <?php echo $recipe["methods"]; ?>
             </div>
             <div id="recipe_info">
             <?php
