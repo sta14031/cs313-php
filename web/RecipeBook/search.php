@@ -28,7 +28,7 @@ $query = strtolower($_GET["query"]);
 // Sanitize query
 $query = preg_replace("/[^a-zA-Z0-9\ ]/", "", $query);
 
-$results = $db->query("SELECT * FROM $table WHERE $column ILIKE '%$query%'");
+$results = $db->query("SELECT * FROM $table WHERE $column ILIKE '%$query%' SORT BY $column");
 
 if ($results->rowCount() == 0) {
     echo "<p>Nothing found matching that search! Please try again.</p>";
