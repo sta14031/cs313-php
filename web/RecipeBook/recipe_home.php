@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require("db.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +19,16 @@
         <?php require("sidebar.php"); ?>
         
         <div id="content">
-            <h3>Top Recipes</h3>
+            <h3>Latest Recipes</h3>
+            <ul>
+            <?php
+            foreach ($db->query("SELECT RecipeName, RecipeId FROM Recipes ORDER BY Last_Updated") as $row)
+            {
+                echo "<li><a href='view_recipe.php?recipe=" . $row['recipeid'];
+                echo "'>" . $row['recipename'] . "</a></li>\n";
+            }
+            ?>
+            </ul>
         </div>
     </div>
 </body>
