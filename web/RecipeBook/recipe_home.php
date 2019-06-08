@@ -22,10 +22,14 @@
             <h3>Latest Recipes</h3>
             <ul>
             <?php
-            foreach ($db->query("SELECT RecipeName, RecipeId FROM Recipes ORDER BY Last_Updated DESC") as $row)
+            foreach ($db->query("SELECT RecipeName, RecipeId FROM Recipes ORDER BY Last_Updated DESC") as $i => $row)
             {
-                echo "<li><a href='view_recipe.php?recipe=" . $row['recipeid'];
-                echo "'>" . $row['recipename'] . "</a></li>\n";
+                // Only display the first 25 recipes
+                if ($i < 3)
+                {
+                    echo "<li><a href='view_recipe.php?recipe=" . $row['recipeid'];
+                    echo "'>" . $row['recipename'] . "</a></li>\n";
+                }
             }
             ?>
             </ul>
