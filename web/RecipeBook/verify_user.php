@@ -14,7 +14,7 @@ foreach ($db->query("SELECT * FROM Users WHERE UserName = '$username'") as $row)
         header("Location: recipe_home.php");
         die();
     } else {
-        header("Location: signin.php?error=badpw");
+        header("Location: login.php?error=badpw");
         die();
     }
 }
