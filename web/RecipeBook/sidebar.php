@@ -1,5 +1,6 @@
 <?php
 # This file provides a sidebar to all pages
+require("db.php");
 ?>
 <div id="sidebar">
     <h3>Navigation</h3>
@@ -17,11 +18,14 @@
     <h3>Login</h3>
     <hr />
     <?php
-        if (!isset($_SESSION["username"])) {
+        if (!isset($_SESSION["userid"])) {
             echo "You are not logged in.<br />";
             echo "<a href='signup.php'>Sign up</a><br /><a href='login.php'>Log in</a>";
         } else {
-            echo "Welcome, " . $_SESSION["username"] . "!<br /><a href='logout.php'>Log out</a>";
+            $stmt = $db->prepare("SELECT UserName FROM Users WHERE UserId = " . $_SESSION["userid"]);
+            $stmt->execute();
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            echo "Welcome, " . $user["username"] . "!<br /><a href='logout.php'>Log out</a>";
         }
     ?> <br />
     <h3>User functions</h3>

@@ -22,7 +22,7 @@ $stmt->bindValue(':username', $username, PDO::PARAM_STR);
 $stmt->bindValue(':hashedpw', $hashedpw, PDO::PARAM_STR);
 $stmt->execute();
 
-$_SESSION["user"] = $db->lastInsertId();
+$_SESSION["userid"] = $db->lastInsertId();
 
 header("Location: recipe_home.php");
 die();
