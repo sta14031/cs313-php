@@ -115,7 +115,7 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
         ?>" /> <br />
         <div id="ingredient_select">
             <?php
-            $ings = $db->query("SELECT * FROM Ingredients ORDER BY IngredientName");
+            $ings[] = $db->query("SELECT * FROM Ingredients ORDER BY IngredientName");
 
             foreach($db->query("SELECT ri.IngredientId, ri.Measurement, i.IngredientName FROM Recipes_Ingredients ri LEFT JOIN
                         Recipes r ON ri.RecipeId = r.RecipeId LEFT JOIN
