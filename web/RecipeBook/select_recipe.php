@@ -12,13 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="recipe.css" />
-    <script src="../jquery-3.3.1.min.js"></script>
     <title>Modify Recipes</title>
 </head>
 <body>
-    <script type="text/javascript">
-
-    </script>
     <h1>Modify a recipe</h1>
     <hr />
 

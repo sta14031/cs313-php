@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="recipe.css" />
-    <title>Log in</title>
+    <title>Log in | Recipe Book</title>
 </head>
 <body>
     <h1>Log in</h1>
