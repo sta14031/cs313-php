@@ -1,6 +1,5 @@
 <?php
     session_start();
-    require("db.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +15,13 @@
     <hr />
     <div id="container">
         <div id="content">
-            Name: <input type="text" name="username" />
+        <form action="verify_user.php" method="POST">
+        <table>
+            <tr><td>Name:</td><td><input type="text" name="username" required /></td></tr>
+            <tr><td>Password:</td><td><input type="password" name="password" required /></td></tr>
+            <tr><td colspan="2"><button type="submit">Log in</button></td></tr>
+        </table>
+        </form>
         </div>
     </div>
 </body>
