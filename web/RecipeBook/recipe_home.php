@@ -25,7 +25,7 @@
             foreach ($db->query("SELECT RecipeName, RecipeId FROM Recipes ORDER BY Last_Updated DESC") as $i => $row)
             {
                 // Only display the first 25 recipes
-                if ($i < 3)
+                if ($i < 25)
                 {
                     echo "<li><a href='view_recipe.php?recipe=" . $row['recipeid'];
                     echo "'>" . $row['recipename'] . "</a></li>\n";
