@@ -26,10 +26,13 @@ require("db.php");
             $stmt->execute();
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
             echo "Welcome, " . $user["username"] . "!<br /><a href='logout.php'>Log out</a>";
+
+            // Echo the user functions
+            echo "<br />
+            <h3>User functions</h3>
+            <hr />
+            <a href='new_recipe.php'>Add a new recipe</a> <br />
+            <a href='select_recipe.php'>Modify a recipe</a> <br />";
         }
-    ?> <br />
-    <h3>User functions</h3>
-    <hr />
-    <a href="new_recipe.php">Add a new recipe</a> <br />
-    <a href="select_recipe.php">Modify a recipe</a> <br />
+    ?> 
 </div>
