@@ -1,5 +1,11 @@
 <?php
     session_start();
+    // Is the user logged in?
+    if (!isset($_SESSION['userid'])) {
+        header("Location: recipe_home.php");
+        die();
+    }
+    
     $recipeID = $_GET["recipe"];
 
     require("db.php");

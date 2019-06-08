@@ -1,5 +1,11 @@
 <?php
     session_start();
+    // Is the user logged in?
+    if (!isset($_SESSION['userid'])) {
+        header("Location: recipe_home.php");
+        die();
+    }
+
     $recipeID = $_GET["recipe"];
 
     require("db.php");
@@ -24,7 +30,7 @@
         <!-- The user will select a recipe to modify -->
         <div id="content"><ul>
         <?php
-        foreach($db->query('SELECT * FROM Recipes WHERE Creator = 2') as $row) { // The TestAdmin account; will change later
+        foreach($db->query('SELECT * FROM Recipes WHERE Creator = ' . $_SESSION["userid"]) as $row) {
             echo "<li>
                 <form action='modify_recipe.php' method='POST'>
                     <input type='hidden' name='recipeId' value='" . $row['recipeid'] . "' />
