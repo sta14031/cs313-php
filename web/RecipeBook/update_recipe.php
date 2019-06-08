@@ -30,8 +30,13 @@ $stmt->bindValue(':skillId', $skill, PDO::PARAM_INT);
 $stmt->bindValue(':prepTime', $prepTime, PDO::PARAM_INT);
 $stmt->execute();
 
-// Add the ingredients
-/*foreach ($ingredients as $key => $ing) {
+// Update the ingredients
+// We do this by deleting all old ingredients from the join table and adding the new ones
+$stmt = $db->prepare("DELETE FROM Recipes_Ingredients WHERE RecipeId = :recipeId");
+$stmt->bindValue(':recipeId', $recipeId, PDO::PARAM_INT);
+$stmt->execute();
+
+foreach ($ingredients as $key => $ing) {
     $stmt = $db->prepare('INSERT INTO Recipes_Ingredients (
         RecipeId,
         IngredientId,
@@ -45,7 +50,7 @@ $stmt->execute();
     $stmt->bindValue(':ingredientId', $ing, PDO::PARAM_INT);
     $stmt->bindValue(':measurement', $measurements[$key], PDO::PARAM_STR);
     $stmt->execute();
-}*/
+}
 
 header("Location: view_recipe.php?recipe=" . $recipeId);
 die();
