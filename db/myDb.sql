@@ -2,8 +2,7 @@ CREATE TABLE Users
 ( 
     UserId SERIAL PRIMARY KEY,
     UserName VARCHAR(128),
-    HashedPassword VARCHAR(128),
-    Salt VARCHAR(128)
+    HashedPassword VARCHAR(128)
 );
 
 CREATE TABLE RecipeTypes

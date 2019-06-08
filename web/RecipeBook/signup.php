@@ -24,7 +24,7 @@ function validate() {
         return true;
     else
     {
-        $(".error").show();
+        $(".pwconfirm").show();
         return false;
     }
 }
@@ -34,12 +34,17 @@ function validate() {
     <hr />
     <div id="container">
         <div id="content">
-        <form action="create_user.php" onsubmit="return validate()">
+        <form action="create_user.php" onsubmit="return validate()" method="POST">
         <table>
-            <tr><td>Name:</td><td><input type="text" name="username" /></td></tr>
-            <tr><td><span class="error">* Passwords do not match.</span>
-            Password:</td><td><input type="password" name="password" /></td></tr>
-            <tr><td>Confirm Password:</td><td><input type="password" name="passwordConfirm" /></td></tr>
+            <tr><td>Name:</td><td><input type="text" name="username" required /></td></tr>
+            <tr><td>Password:</td><td><input type="password" name="password" required /></td></tr>
+            <tr><td>Confirm Password:</td><td><input type="password" name="passwordConfirm" required /></td></tr>
+            <span class="error pwconfirm">* Passwords do not match.</span>
+            <?php
+            if ($_GET['error'] == 'nameinuse') {
+                echo "<span class='error' style='display: inline;'>* Username is already taken.</span>";
+            }
+            ?>
             <tr><td colspan="2"><button type="submit">Register</button></td></tr>
         </table>
         </form>
