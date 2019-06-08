@@ -19,7 +19,7 @@
     <?php
         if (!isset($_SESSION["username"])) {
             echo "You are not logged in.<br />";
-            echo "<a href='register.php'>Sign up</a><br /><a href='login.php'>Log in</a>";
+            echo "<a href='signup.php'>Sign up</a><br /><a href='login.php'>Log in</a>";
         } else {
             echo "Welcome, " . $_SESSION["username"] . "!<br /><a href='logout.php'>Log out</a>";
         }
