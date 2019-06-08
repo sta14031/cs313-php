@@ -22,7 +22,7 @@
             <h3>Latest Recipes</h3>
             <ul>
             <?php
-            foreach ($db->query("SELECT RecipeName, RecipeId FROM Recipes ORDER BY Last_Updated") as $row)
+            foreach ($db->query("SELECT RecipeName, RecipeId FROM Recipes ORDER BY Last_Updated DESC") as $row)
             {
                 echo "<li><a href='view_recipe.php?recipe=" . $row['recipeid'];
                 echo "'>" . $row['recipename'] . "</a></li>\n";
