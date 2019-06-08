@@ -5,7 +5,7 @@
         header("Location: recipe_home.php");
         die();
     }
-    
+
     $recipeID = $_GET["recipe"];
 
     require("db.php");
@@ -54,7 +54,7 @@ $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // After the document is loaded, populate the first input
     $(document).ready(function(){
-        populate(1);
+        //populate(1);
         $("input#numIngredients").change(function(){
             populate($("input#numIngredients").val());
         });
